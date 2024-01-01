@@ -11,16 +11,15 @@ body::-webkit-scrollbar {
 }
 
 body {
-  background: linear-gradient(136deg, #00febb, #5b549b);
   -ms-overflow-style: none;
   scrollbar-width: none;
-  height: 110vh;
 }
 
 .card {
+  background: linear-gradient(136deg, #00febb, #5b549b);
   position: relative;
-  top: 20px;
-  /* height: 100vh; */
+  top: -1px;
+  height: 100vh;
   color: #fff;
   padding: 20px 35px;
   text-align: center;
@@ -83,6 +82,8 @@ body {
   justify-content: space-between;
   padding: 0 20px;
   margin-top: 50px;
+  flex-wrap: wrap;
+  row-gap: 20px;
 }
 
 .col {
@@ -97,7 +98,7 @@ body {
 }
 
 .humidity,
-.wind {
+.wind, .visibility {
   font-size: 25px;
   margin-top: -6px;
 }
@@ -120,9 +121,10 @@ body {
 
 /* Navbar */
 .navbar {
+  background: linear-gradient(5deg, #00febb, #5b549b);
   width: 100vw;
   height: 60px;
-  color: #fff;
+  color: #F9F6EE;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,6 +146,25 @@ body {
 .current-location img{
     width: 25px;
     height: 25px;
+}
+
+/* Footer */
+.footer{
+  position: absolute;
+  bottom: -80px;
+  height: 60px;
+  background: #FFFAFA;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.footer a{
+  text-decoration: none;
+  color: black;
 }
 
 /* Media Query */
@@ -179,7 +200,7 @@ body {
         padding: 0 15px;
     }
 
-    .humidity, .wind {
+    .humidity, .wind, .visibility {
         font-size: 20px;
     }
 
