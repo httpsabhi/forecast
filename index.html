@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forecast</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
+    <div id="preloader"></div>
+
     <nav>
-        <div class="navbar">
-            <div>
-                <h2>Forecast</h2>
-            </div>
-            <div class="current-location">
-                <p id="current-location"></p>
-                <p id="current-location-temp"></p>
-                <img src="images/cloudy.png" alt="">
-            </div>
+      <div class="navbar">
+        <div>
+          <h2>Forecast</h2>
         </div>
+        <div class="current-location">
+          <p id="current-location"></p>
+          <p id="current-location-temp"></p>
+          <img src="images/cloudy.png" id="nav-icon" alt="" />
+        </div>
+      </div>
     </nav>
     <div class="card">
       <div class="search">
@@ -27,40 +36,65 @@
       <div class="error">
         <p>Invalid city name</p>
       </div>
+      <div class="allow-location">
+        <p>Give Location Permission</p>
+      </div>
       <div class="weather">
         <img src="" alt="" class="weather-icon" />
         <p class="description" id="desc"></p>
         <h1 class="temp">22°c</h1>
         <p class="description">Feels like <span id="feel"></span></p>
         <h2 class="city">New York</h2>
+        <div class="minor-details">
+          <h3 id="day">Friday</h3>
+          <h3 id="minmax">10~20C</h3>
+        </div>
         <div class="details">
           <div class="col">
             <img src="images/wind.png" alt="" />
             <div>
               <p class="wind">15 km/h</p>
-              <p id="wind-direction">Wind Speed</p>
+              <p class="detail-desc" id="wind-direction">Wind Speed</p>
             </div>
           </div>
           <div class="col">
             <img src="images/humidity.png" alt="" />
             <div>
               <p class="humidity">50%</p>
-              <p>Humidity</p>
+              <p class="detail-desc">Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="images/wind-gust.png" alt="" />
+            <div>
+              <p class="wind-gust"></p>
+              <p class="detail-desc">Wind Gust</p>
             </div>
           </div>
           <div class="col">
             <img src="images/mountains.png" alt="" />
             <div>
               <p class="visibility"></p>
-              <p>Visibility</p>
+              <p class="detail-desc">Visibility</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!--Forecast Section  -->
+    <div class="forecast">
+      <div class="forecast-error">
+        <p>Error Fetching Forecast</p>
+      </div>
+      <h2>Next 5 Days</h2>
+      <div class="forecast-card"></div>
+    </div>
     <footer>
       <div class="footer">
-        <p>Developed By <a href="https://abhaysdevportfolio.netlify.app/">Abhay Kumar</a></p>
+        <p>
+          Developed By
+          <a href="https://abhaysdevportfolio.netlify.app/">Abhay Kumar</a>
+        </p>
       </div>
     </footer>
     <script src="script.js"></script>
